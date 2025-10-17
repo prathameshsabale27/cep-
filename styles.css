@@ -1,0 +1,118 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: linear-gradient(135deg, #e0f7fa, #fff);
+  color: #333;
+}
+
+header {
+  background: #2e7d32;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2em;
+}
+
+.pollution-section {
+  padding: 40px;
+  text-align: center;
+}
+
+.pollution-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.pollution-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  width: 220px;
+  padding: 20px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.pollution-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.pollution-card img {
+  width: 80px;
+  margin-bottom: 10px;
+}
+
+.complaint-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: auto;
+  gap: 15px;
+}
+
+.complaint-form input, textarea {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #aaa;
+  font-size: 1em;
+}
+
+.complaint-form button {
+  background: #2e7d32;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.complaint-form button:hover {
+  background: #1b5e20;
+}
+
+.report-card {
+  background: white;
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.report-section {
+  text-align: center;
+}
+
+#downloadBtn {
+  background: #0288d1;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#downloadBtn:hover {
+  background: #01579b;
+}
+
+footer {
+  background: #1b5e20;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 0.9em;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Complaint Report</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <h1><i class="fa-solid fa-file-pdf"></i> Generated Complaint Report</h1>
+  </header>
+
+  <section class="report-section">
+    <div id="report" class="report-card"></div>
+    <button id="downloadBtn"><i class="fa-solid fa-download"></i> Download PDF</button>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script>
+    const { jsPDF } = window.jspdf;
+    const data = JSON.parse(localStorage.getItem('complaintData'));
+
+    document.getElementById("report").innerHTML = `
+      <h2>${data.type}</h2>
+      <p><strong>Name:</strong> ${data.name}</p>
+      <p><strong>Location:</strong> ${data.location}</p>
+      <p><strong>Description:</strong> ${data.description}</p>
+      <p><strong>Date:</strong> ${new Date().toLocaleString()}</p>
+    `;
+
+    document.getElementById("downloadBtn").addEventListener("click", () => {
+      const doc = new jsPDF();
+      doc.text("Pollution Complaint Report", 10, 10);
+      doc.text(`Type: ${data.type}`, 10, 20);
+      doc.text(`Name: ${data.name}`, 10, 30);
+      doc.text(`Location: ${data.location}`, 10, 40);
+      doc.text("Description:", 10, 50);
+      doc.text(data.description, 10, 60, { maxWidth: 180 });
+      doc.text(`Date: ${new Date().toLocaleString()}`, 10, 120);
+      doc.save("complaint_report.pdf");
+    });
+  </script>
+</body>
+</html>

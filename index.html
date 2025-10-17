@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Clean Earth Complaint Portal</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <h1><i class="fa-solid fa-leaf"></i> Clean Earth Complaint Portal</h1>
+    <p>Let’s make our environment better by reporting pollution problems.</p>
+  </header>
+
+  <section class="pollution-section">
+    <h2>Select the Pollution Type</h2>
+    <div class="pollution-container">
+
+      <div class="pollution-card" onclick="selectPollution('Air Pollution')">
+        <img src="https://cdn-icons-png.flaticon.com/512/1126/1126873.png" alt="Air Pollution">
+        <h3>Air Pollution</h3>
+        <p>Report smoke, emissions, or dust affecting the air quality.</p>
+      </div>
+
+      <div class="pollution-card" onclick="selectPollution('Water Pollution')">
+        <img src="https://cdn-icons-png.flaticon.com/512/990/990284.png" alt="Water Pollution">
+        <h3>Water Pollution</h3>
+        <p>Report contaminated water bodies, sewage, or oil spills.</p>
+      </div>
+
+      <div class="pollution-card" onclick="selectPollution('Noise Pollution')">
+        <img src="https://cdn-icons-png.flaticon.com/512/3029/3029351.png" alt="Noise Pollution">
+        <h3>Noise Pollution</h3>
+        <p>Report loud music, traffic noise, or construction disturbances.</p>
+      </div>
+
+      <div class="pollution-card" onclick="selectPollution('Soil Pollution')">
+        <img src="https://cdn-icons-png.flaticon.com/512/1995/1995472.png" alt="Soil Pollution">
+        <h3>Soil Pollution</h3>
+        <p>Report waste dumping or chemical leakage on land.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>🌿 Together we can build a cleaner, greener planet 🌎</p>
+  </footer>
+
+  <script>
+    function selectPollution(type) {
+      localStorage.setItem('pollutionType', type);
+      window.location.href = 'complaint.html';
+    }
+  </script>
+</body>
+</html>
